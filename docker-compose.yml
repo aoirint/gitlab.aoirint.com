@@ -8,10 +8,10 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'https://gitlab.aoirint.com'
     ports:
-      - '127.0.0.1:8052:80'
+      - '${HOST_HTTP_PORT}:80'
     volumes:
-      - '$GITLAB_HOME/config:/etc/gitlab'
-      - '$GITLAB_HOME/logs:/var/log/gitlab'
-      - '$GITLAB_HOME/data:/var/opt/gitlab'
+      - '${GITLAB_HOME}/config:/etc/gitlab'
+      - '${GITLAB_HOME}/logs:/var/log/gitlab'
+      - '${GITLAB_HOME}/data:/var/opt/gitlab'
     shm_size: '256m'
 
