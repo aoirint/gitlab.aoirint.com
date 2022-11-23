@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  web:
+    image: 'gitlab/gitlab-ce:15.6.0-ce.0'
+    restart: always
+    hostname: 'gitlab.aoirint.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.aoirint.com'
+    ports:
+      - '127.0.0.1:8052:80'
+    volumes:
+      - '$GITLAB_HOME/config:/etc/gitlab'
+      - '$GITLAB_HOME/logs:/var/log/gitlab'
+      - '$GITLAB_HOME/data:/var/opt/gitlab'
+    shm_size: '256m'
+
