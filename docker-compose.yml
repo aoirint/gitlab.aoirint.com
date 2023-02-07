@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   web:
-    image: "gitlab/gitlab-ce:15.7.3-ce.0"
+    image: "gitlab/gitlab-ce:15.7.6-ce.0"
     restart: always
     hostname: "gitlab.aoirint.com"
     environment:
